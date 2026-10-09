@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldTrophy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="50%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+  </defs>
+  <!-- Handles -->
+  <path d="M 16 16 C 6 16 6 34 18 36" stroke="#EAB308" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 48 16 C 58 16 58 34 46 36" stroke="#EAB308" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Cup Body -->
+  <path d="M 16 12 L 48 12 L 44 36 C 42 43 36 46 32 46 C 28 46 22 43 20 36 Z" fill="url(#goldTrophy)" stroke="#78350F" stroke-width="1.5"/>
+  <!-- Star on cup -->
+  <polygon points="32,20 34,25 39,25 35,28 37,33 32,30 27,33 29,28 25,25 30,25" fill="#FFFFFF"/>
+  <!-- Stem -->
+  <rect x="29" y="46" width="6" height="8" fill="#D97706" stroke="#78350F" stroke-width="1"/>
+  <!-- Base -->
+  <rect x="20" y="54" width="24" height="6" rx="2" fill="#78350F"/>
+  <rect x="24" y="51" width="16" height="3" fill="#D97706"/>
+</svg>

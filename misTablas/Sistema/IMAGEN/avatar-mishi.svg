@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="mishiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#D946EF"/>
+    </linearGradient>
+    <linearGradient id="catFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <circle cx="60" cy="60" r="56" fill="url(#mishiBg)" stroke="#E879F9" stroke-width="4"/>
+  <!-- Sparkles -->
+  <text x="22" y="32" font-size="14" fill="#FDE047">✦</text>
+  <text x="92" y="40" font-size="16" fill="#FDE047">★</text>
+  <!-- Cat Ears -->
+  <polygon points="32,48 40,24 55,42" fill="url(#catFur)"/>
+  <polygon points="36,44 42,29 52,42" fill="#F472B6"/>
+  <polygon points="88,48 80,24 65,42" fill="url(#catFur)"/>
+  <polygon points="84,44 78,29 68,42" fill="#F472B6"/>
+  <!-- Wizard Hat -->
+  <polygon points="40,38 60,10 80,38" fill="#1E1B4B" stroke="#6366F1" stroke-width="1.5"/>
+  <ellipse cx="60" cy="38" rx="26" ry="6" fill="#312E81"/>
+  <circle cx="60" cy="24" r="3" fill="#FACC15"/>
+  <!-- Head -->
+  <ellipse cx="60" cy="66" rx="34" ry="28" fill="url(#catFur)"/>
+  <!-- White Muzzle -->
+  <ellipse cx="60" cy="74" rx="18" ry="12" fill="#FFFFFF"/>
+  <!-- Eyes -->
+  <ellipse cx="46" cy="60" rx="6" ry="7" fill="#10B981"/>
+  <circle cx="46" cy="60" r="3.5" fill="#0F172A"/>
+  <circle cx="48" cy="58" r="1.5" fill="#FFFFFF"/>
+  <ellipse cx="74" cy="60" rx="6" ry="7" fill="#10B981"/>
+  <circle cx="74" cy="60" r="3.5" fill="#0F172A"/>
+  <circle cx="76" cy="58" r="1.5" fill="#FFFFFF"/>
+  <!-- Nose and Mouth -->
+  <polygon points="57,71 63,71 60,74" fill="#F472B6"/>
+  <path d="M 55 76 Q 60 79 60 75 Q 60 79 65 76" stroke="#4C1D95" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Whiskers -->
+  <line x1="28" y1="72" x2="42" y2="73" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="26" y1="78" x2="42" y2="77" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="92" y1="72" x2="78" y2="73" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="94" y1="78" x2="78" y2="77" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Cheeks Blush -->
+  <circle cx="38" cy="70" r="4" fill="#F472B6" opacity="0.6"/>
+  <circle cx="82" cy="70" r="4" fill="#F472B6" opacity="0.6"/>
+</svg>

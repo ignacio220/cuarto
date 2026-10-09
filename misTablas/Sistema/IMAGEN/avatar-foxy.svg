@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="foxyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="foxFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <circle cx="60" cy="60" r="56" fill="url(#foxyBg)" stroke="#FDBA74" stroke-width="4"/>
+  <!-- Ears -->
+  <polygon points="30,50 36,18 54,42" fill="url(#foxFur)"/>
+  <polygon points="35,46 39,24 50,42" fill="#FEF08A"/>
+  <polygon points="90,50 84,18 66,42" fill="url(#foxFur)"/>
+  <polygon points="85,46 81,24 70,42" fill="#FEF08A"/>
+  <!-- Fox Head -->
+  <ellipse cx="60" cy="62" rx="36" ry="30" fill="url(#foxFur)"/>
+  <!-- White Cheeks / Mask -->
+  <path d="M 26 62 Q 40 50 60 62 Q 80 50 94 62 Q 90 84 60 88 Q 30 84 26 62 Z" fill="#FFFFFF"/>
+  <!-- Eyes -->
+  <ellipse cx="44" cy="56" rx="5" ry="6" fill="#1E293B"/>
+  <circle cx="46" cy="54" r="2" fill="#FFFFFF"/>
+  <ellipse cx="76" cy="56" rx="5" ry="6" fill="#1E293B"/>
+  <circle cx="78" cy="54" r="2" fill="#FFFFFF"/>
+  <!-- Fox Nose -->
+  <polygon points="56,70 64,70 60,75" fill="#1E293B"/>
+  <!-- Smile -->
+  <path d="M 54 77 Q 60 82 66 77" stroke="#1E293B" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Cheeks Blush -->
+  <circle cx="36" cy="68" r="4" fill="#FDA4AF"/>
+  <circle cx="84" cy="68" r="4" fill="#FDA4AF"/>
+  <!-- Hero Bandana / Collar -->
+  <path d="M 36 90 Q 60 102 84 90 L 60 108 Z" fill="#3B82F6"/>
+  <circle cx="60" cy="95" r="4" fill="#FACC15"/>
+</svg>

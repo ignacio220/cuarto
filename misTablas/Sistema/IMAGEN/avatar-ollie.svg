@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="ollieBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="owlFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <circle cx="60" cy="60" r="56" fill="url(#ollieBg)" stroke="#34D399" stroke-width="4"/>
+  <!-- Feather Tufts -->
+  <polygon points="34,32 44,16 48,34" fill="url(#owlFur)"/>
+  <polygon points="86,32 76,16 72,34" fill="url(#owlFur)"/>
+  <!-- Body / Head -->
+  <ellipse cx="60" cy="64" rx="36" ry="34" fill="url(#owlFur)"/>
+  <ellipse cx="60" cy="74" rx="24" ry="20" fill="#FEF3C7"/>
+  <!-- Belly Feather Marks -->
+  <path d="M 54 70 Q 60 74 66 70" stroke="#D97706" stroke-width="2" fill="none"/>
+  <path d="M 50 78 Q 60 82 70 78" stroke="#D97706" stroke-width="2" fill="none"/>
+  <path d="M 54 85 Q 60 88 66 85" stroke="#D97706" stroke-width="2" fill="none"/>
+  <!-- Detective Glasses Frame -->
+  <circle cx="44" cy="54" r="14" fill="#FFFFFF" stroke="#F59E0B" stroke-width="3.5"/>
+  <circle cx="76" cy="54" r="14" fill="#FFFFFF" stroke="#F59E0B" stroke-width="3.5"/>
+  <line x1="58" y1="54" x2="62" y2="54" stroke="#F59E0B" stroke-width="3.5"/>
+  <!-- Owl Eyes -->
+  <circle cx="44" cy="54" r="7" fill="#1E293B"/>
+  <circle cx="47" cy="52" r="2.5" fill="#FFFFFF"/>
+  <circle cx="76" cy="54" r="7" fill="#1E293B"/>
+  <circle cx="79" cy="52" r="2.5" fill="#FFFFFF"/>
+  <!-- Beak -->
+  <polygon points="56,62 64,62 60,70" fill="#EA580C"/>
+  <!-- Cheeks Blush -->
+  <circle cx="28" cy="66" r="3.5" fill="#F87171" opacity="0.6"/>
+  <circle cx="92" cy="66" r="3.5" fill="#F87171" opacity="0.6"/>
+  <!-- Detective Cap or Bowtie -->
+  <polygon points="52,94 68,94 60,102" fill="#DC2626"/>
+  <polygon points="52,102 68,102 60,94" fill="#DC2626"/>
+  <circle cx="60" cy="98" r="3" fill="#FACC15"/>
+</svg>

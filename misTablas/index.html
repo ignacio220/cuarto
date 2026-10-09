@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Tablas 🌟 ¡Aprende Jugando! (4° Básico)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-dark: #3730A3;
+      --accent: #F59E0B;
+      --accent-glow: #FDE047;
+      --success: #10B981;
+      --danger: #EF4444;
+      --bg-dark: #0F172A;
+      --card-bg: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --border-radius: 24px;
+      --font-fun: 'Fredoka', 'Nunito', system-ui, sans-serif;
+      --font-body: 'Nunito', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: radial-gradient(circle at 50% 20%, #312E81 0%, #1E1B4B 45%, #0F172A 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1rem;
+      color: #FFFFFF;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Floating particles background */
+    .bg-math-symbol {
+      position: absolute;
+      font-family: var(--font-fun);
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.05);
+      user-select: none;
+      pointer-events: none;
+      animation: floatSymbol 14s infinite ease-in-out;
+    }
+    .s1 { top: 8%; left: 8%; animation-delay: 0s; color: rgba(250, 204, 21, 0.12); }
+    .s2 { top: 15%; right: 10%; animation-delay: 2s; color: rgba(56, 189, 248, 0.12); }
+    .s3 { bottom: 12%; left: 12%; animation-delay: 4s; color: rgba(244, 114, 182, 0.12); }
+    .s4 { bottom: 15%; right: 12%; animation-delay: 6s; color: rgba(52, 211, 153, 0.12); }
+    .s5 { top: 48%; left: 4%; animation-delay: 3s; }
+    .s6 { top: 52%; right: 5%; animation-delay: 5s; }
+
+    @keyframes floatSymbol {
+      0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+      50% { transform: translateY(-25px) rotate(15deg) scale(1.1); }
+    }
+
+    /* Main Container */
+    .login-container {
+      width: 100%;
+      max-width: 580px;
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: var(--border-radius);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 0 4px rgba(250, 204, 21, 0.35);
+      padding: 2.5rem 2rem;
+      position: relative;
+      z-index: 10;
+      color: var(--text-main);
+      backdrop-filter: blur(10px);
+      animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.85) translateY(30px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Header & Logo */
+    .header-logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #EEF2FF;
+      color: var(--primary);
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid #C7D2FE;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.1);
+    }
+
+    .title {
+      font-family: var(--font-fun);
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #4F46E5 0%, #D946EF 50%, #EA580C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Returning User Banner */
+    .returning-user-card {
+      background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+      border: 2px dashed #F59E0B;
+      border-radius: 18px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .returning-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .returning-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .returning-name {
+      font-weight: 800;
+      color: #92400E;
+      font-size: 1.05rem;
+    }
+
+    .returning-stats {
+      font-size: 0.8rem;
+      color: #B45309;
+      font-weight: 700;
+    }
+
+    .btn-continue {
+      background: #D97706;
+      color: white;
+      border: none;
+      padding: 0.55rem 1.1rem;
+      border-radius: 12px;
+      font-weight: 800;
+      font-family: var(--font-fun);
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(217, 119, 6, 0.35);
+      transition: all 0.2s ease;
+    }
+    .btn-continue:hover {
+      background: #B45309;
+      transform: translateY(-2px);
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 1.6rem;
+    }
+
+    .label-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-family: var(--font-fun);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+
+    .label-icon {
+      font-size: 1.25rem;
+    }
+
+    .input-text-wrapper {
+      position: relative;
+    }
+
+    .input-name {
+      width: 100%;
+      padding: 0.95rem 1.25rem;
+      border-radius: 16px;
+      border: 3px solid #E2E8F0;
+      font-family: var(--font-fun);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      background: #F8FAFC;
+      transition: all 0.25s ease;
+      outline: none;
+    }
+
+    .input-name:focus {
+      border-color: var(--primary);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+    }
+
+    .input-name::placeholder {
+      color: #94A3B8;
+      font-weight: 500;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+    }
+
+    /* Avatar Grid */
+    .avatar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 440px) {
+      .avatar-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .avatar-card {
+      background: #F8FAFC;
+      border: 3px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      user-select: none;
+    }
+
+    .avatar-card:hover {
+      transform: translateY(-4px);
+      border-color: #A5B4FC;
+      background: #EEF2FF;
+    }
+
+    .avatar-card.selected {
+      border-color: var(--primary);
+      background: #EEF2FF;
+      box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .avatar-card.selected::after {
+      content: '✓';
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 26px;
+      height: 26px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      font-weight: 900;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 8px rgba(79, 70, 229, 0.4);
+      border: 2px solid #FFFFFF;
+    }
+
+    .avatar-img {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      margin: 0 auto 0.4rem;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .avatar-card:hover .avatar-img {
+      transform: scale(1.08) rotate(3deg);
+    }
+
+    .avatar-name {
+      font-family: var(--font-fun);
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 0.15rem;
+    }
+
+    .avatar-title {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Submit Button */
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+      color: #FFFFFF;
+      font-family: var(--font-fun);
+      font-size: 1.4rem;
+      font-weight: 800;
+      padding: 1.1rem;
+      border: none;
+      border-radius: 18px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      margin-top: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.5);
+      background: linear-gradient(135deg, #34D399 0%, #059669 100%);
+    }
+
+    .btn-submit:active {
+      transform: translateY(1px);
+    }
+
+    /* Alert / Error Toast */
+    .alert-box {
+      background: #FEE2E2;
+      border-left: 5px solid var(--danger);
+      color: #991B1B;
+      padding: 0.85rem 1.1rem;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: none;
+      align-items: center;
+      gap: 0.65rem;
+      animation: shake 0.4s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+
+    /* Footer info */
+    .footer-info {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .footer-info a {
+      color: #FDE047;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* Sound prompt */
+    .sound-hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Decorative Symbols -->
+  <div class="bg-math-symbol s1">× 6</div>
+  <div class="bg-math-symbol s2">7 × 8</div>
+  <div class="bg-math-symbol s3">× 9</div>
+  <div class="bg-math-symbol s4">4 × 4</div>
+  <div class="bg-math-symbol s5">★</div>
+  <div class="bg-math-symbol s6">÷</div>
+
+  <main class="login-container">
+    <!-- Header -->
+    <header class="header-logo">
+      <div class="badge-pill">
+        <span>🇨🇱 4° BÁSICO</span>
+        <span>•</span>
+        <span>MATEMÁTICA Y SIMCE</span>
+      </div>
+      <h1 class="title">MIS TABLAS</h1>
+      <p class="subtitle">¡Aprende las tablas del 2 al 10 jugando y superando desafíos!</p>
+    </header>
+
+    <!-- Returning User Alert / Shortcut -->
+    <div id="returningUserBanner" class="returning-user-card">
+      <div class="returning-info">
+        <img id="returningAvatarImg" src="Sistema/IMAGEN/avatar-cosmo.svg" alt="Avatar" class="returning-avatar">
+        <div>
+          <div id="returningName" class="returning-name">¡Hola, Matías!</div>
+          <div id="returningStats" class="returning-stats">Nivel 1 • 0 Puntos</div>
+        </div>
+      </div>
+      <button type="button" id="btnContinueProfile" class="btn-continue">Continuar 🚀</button>
+    </div>
+
+    <!-- Alert Box for Validations -->
+    <div id="alertBox" class="alert-box" role="alert">
+      <span style="font-size: 1.3rem;">⚠️</span>
+      <span id="alertMessage">Por favor ingresa tu nombre para jugar.</span>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" novalidate>
+      <!-- Name Input -->
+      <div class="form-group">
+        <label for="studentName" class="label-header">
+          <span class="label-icon">✏️</span>
+          <span>¿Cuál es tu nombre o apodo?</span>
+        </label>
+        <div class="input-text-wrapper">
+          <input 
+            type="text" 
+            id="studentName" 
+            name="studentName" 
+            class="input-name" 
+            placeholder="Escribe tu nombre aquí..."
+            maxlength="20"
+            autocomplete="off"
+            required
+          >
+        </div>
+      </div>
+
+      <!-- Avatar Selection -->
+      <div class="form-group">
+        <div class="label-header">
+          <span class="label-icon">🎭</span>
+          <span>Elige a tu compañero de aventuras:</span>
+        </div>
+        
+        <div class="avatar-grid" id="avatarGrid">
+          <!-- Cosmo -->
+          <div class="avatar-card" data-avatar="cosmo" data-title="Astronauta Cosmo" data-file="Sistema/IMAGEN/avatar-cosmo.svg">
+            <img src="Sistema/IMAGEN/avatar-cosmo.svg" alt="Cosmo" class="avatar-img">
+            <div class="avatar-name">Cosmo</div>
+            <div class="avatar-title">Astronauta</div>
+          </div>
+          <!-- Rexi -->
+          <div class="avatar-card" data-avatar="rexi" data-title="Dino Rexi" data-file="Sistema/IMAGEN/avatar-rexi.svg">
+            <img src="Sistema/IMAGEN/avatar-rexi.svg" alt="Rexi" class="avatar-img">
+            <div class="avatar-name">Rexi</div>
+            <div class="avatar-title">Dinosaurio</div>
+          </div>
+          <!-- Chip -->
+          <div class="avatar-card" data-avatar="chip" data-title="Robot Chip" data-file="Sistema/IMAGEN/avatar-chip.svg">
+            <img src="Sistema/IMAGEN/avatar-chip.svg" alt="Chip" class="avatar-img">
+            <div class="avatar-name">Chip</div>
+            <div class="avatar-title">Robot Sabio</div>
+          </div>
+          <!-- Foxy -->
+          <div class="avatar-card" data-avatar="foxy" data-title="Zorro Foxy" data-file="Sistema/IMAGEN/avatar-foxy.svg">
+            <img src="Sistema/IMAGEN/avatar-foxy.svg" alt="Foxy" class="avatar-img">
+            <div class="avatar-name">Foxy</div>
+            <div class="avatar-title">Zorro Veloz</div>
+          </div>
+          <!-- Mishi -->
+          <div class="avatar-card" data-avatar="mishi" data-title="Mishi el Mago" data-file="Sistema/IMAGEN/avatar-mishi.svg">
+            <img src="Sistema/IMAGEN/avatar-mishi.svg" alt="Mishi" class="avatar-img">
+            <div class="avatar-name">Mishi</div>
+            <div class="avatar-title">Gato Mágico</div>
+          </div>
+          <!-- Ollie -->
+          <div class="avatar-card" data-avatar="ollie" data-title="Búho Ollie" data-file="Sistema/IMAGEN/avatar-ollie.svg">
+            <img src="Sistema/IMAGEN/avatar-ollie.svg" alt="Ollie" class="avatar-img">
+            <div class="avatar-name">Ollie</div>
+            <div class="avatar-title">Detective</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="btnSubmit" class="btn-submit">
+        <span>¡Comenzar Aventura!</span>
+        <span>🚀</span>
+      </button>
+
+      <div class="sound-hint">
+        <span>🔊 Sonidos interactivos activados</span>
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer-info">
+    <p>Proyecto Educativo Mis Tablas • Unidad 4: Apps Móviles y Matemáticas • 4° Básico</p>
+  </footer>
+
+  <script>
+    // Web Audio API Synthesizer for rich arcade sound effects
+    class SoundFx {
+      constructor() {
+        this.ctx = null;
+        this.enabled = true;
+      }
+      init() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (AudioContext) {
+            this.ctx = new AudioContext();
+          }
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+      playPop() {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx) return;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, this.ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(880, this.ctx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.18, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + 0.1);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.1);
+      }
+      playError() {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx) return;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(260, this.ctx.currentTime);
+        osc.frequency.setValueAtTime(200, this.ctx.currentTime + 0.12);
+        gain.gain.setValueAtTime(0.2, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + 0.25);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.25);
+      }
+      playLaunch() {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx) return;
+        const now = this.ctx.currentTime;
+        // Ascending fanfare
+        const notes = [392, 523.25, 659.25, 783.99, 1046.5];
+        notes.forEach((freq, idx) => {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+          gain.gain.setValueAtTime(0.22, now + idx * 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.08 + 0.2);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now + idx * 0.08);
+          osc.stop(now + idx * 0.08 + 0.25);
+        });
+      }
+    }
+
+    const sound = new SoundFx();
+    let selectedAvatar = null;
+    let selectedAvatarTitle = '';
+    let selectedAvatarFile = '';
+
+    // Elements
+    const studentNameInput = document.getElementById('studentName');
+    const avatarCards = document.querySelectorAll('.avatar-card');
+    const loginForm = document.getElementById('loginForm');
+    const alertBox = document.getElementById('alertBox');
+    const alertMessage = document.getElementById('alertMessage');
+    const returningBanner = document.getElementById('returningUserBanner');
+    const returningAvatarImg = document.getElementById('returningAvatarImg');
+    const returningName = document.getElementById('returningName');
+    const returningStats = document.getElementById('returningStats');
+    const btnContinueProfile = document.getElementById('btnContinueProfile');
+
+    // Check existing profile
+    try {
+      const savedUserJson = localStorage.getItem('misTablas_student');
+      if (savedUserJson) {
+        const savedUser = JSON.parse(savedUserJson);
+        if (savedUser && savedUser.name) {
+          returningBanner.style.display = 'flex';
+          returningName.textContent = `¡Hola de nuevo, ${savedUser.name}!`;
+          returningStats.textContent = `Nivel ${savedUser.level || 1} • ${savedUser.points || 0} Puntos • ${Object.values(savedUser.tablesProgress || {}).filter(p => p >= 100).length} Tablas dominadas`;
+          if (savedUser.avatarFile) {
+            returningAvatarImg.src = savedUser.avatarFile;
+          }
+          studentNameInput.value = savedUser.name;
+          // Pre-select avatar
+          avatarCards.forEach(card => {
+            if (card.dataset.avatar === savedUser.avatar) {
+              selectAvatar(card);
+            }
+          });
+        }
+      }
+    } catch(e) {
+      console.warn('Storage check failed', e);
+    }
+
+    // Avatar Selection Event
+    avatarCards.forEach(card => {
+      card.addEventListener('click', () => {
+        sound.playPop();
+        selectAvatar(card);
+        hideAlert();
+      });
+    });
+
+    function selectAvatar(card) {
+      avatarCards.forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedAvatar = card.dataset.avatar;
+      selectedAvatarTitle = card.dataset.title;
+      selectedAvatarFile = card.dataset.file;
+    }
+
+    // Continue Profile shortcut
+    if (btnContinueProfile) {
+      btnContinueProfile.addEventListener('click', () => {
+        sound.playLaunch();
+        btnContinueProfile.textContent = 'Ingresando... 🚀';
+        setTimeout(() => {
+          window.location.href = 'Sistema/index.html';
+        }, 400);
+      });
+    }
+
+    // Form Submission & Validation
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const rawName = studentNameInput.value.trim();
+
+      // Validation 1: Name length
+      if (!rawName || rawName.length < 2) {
+        sound.playError();
+        showAlert('¡Hola! Por favor escribe tu nombre (al menos 2 letras) para poder identificarte.');
+        studentNameInput.focus();
+        return;
+      }
+
+      // Validation 2: Avatar selected
+      if (!selectedAvatar) {
+        sound.playError();
+        showAlert('¡Casi listo! Por favor selecciona a tu avatar favorito para que te acompañe.');
+        return;
+      }
+
+      // Data is valid!
+      hideAlert();
+      sound.playLaunch();
+
+      // Retrieve existing progress if matches name, or initialize fresh profile
+      let userProfile = null;
+      try {
+        const existing = localStorage.getItem('misTablas_student');
+        if (existing) {
+          const parsed = JSON.parse(existing);
+          if (parsed && parsed.name && parsed.name.toLowerCase() === rawName.toLowerCase()) {
+            userProfile = parsed;
+          }
+        }
+      } catch(err) {}
+
+      if (!userProfile) {
+        userProfile = {
+          name: rawName,
+          avatar: selectedAvatar,
+          avatarTitle: selectedAvatarTitle,
+          avatarFile: selectedAvatarFile,
+          createdAt: new Date().toISOString(),
+          points: 0,
+          level: 1,
+          starsTotal: 0,
+          tablesProgress: {
+            "2": 0, "3": 0, "4": 0, "5": 0, "6": 0,
+            "7": 0, "8": 0, "9": 0, "10": 0
+          },
+          tablesStars: {
+            "2": 0, "3": 0, "4": 0, "5": 0, "6": 0,
+            "7": 0, "8": 0, "9": 0, "10": 0
+          },
+          unlockedTables: [2, 3], // Tablas 2 y 3 inician desbloqueadas
+          badges: ["novato"],
+          gamesPlayed: 0,
+          simceAttempts: []
+        };
+      } else {
+        // Update avatar if changed
+        userProfile.avatar = selectedAvatar;
+        userProfile.avatarTitle = selectedAvatarTitle;
+        userProfile.avatarFile = selectedAvatarFile;
+        userProfile.name = rawName;
+      }
+
+      localStorage.setItem('misTablas_student', JSON.stringify(userProfile));
+
+      // Visual transition
+      const btn = document.getElementById('btnSubmit');
+      btn.style.pointerEvents = 'none';
+      btn.innerHTML = '<span>¡Preparando tu Aventura!</span> <span>✨</span>';
+      btn.style.background = 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)';
+
+      setTimeout(() => {
+        window.location.href = 'Sistema/index.html';
+      }, 500);
+    });
+
+    function showAlert(msg) {
+      alertMessage.textContent = msg;
+      alertBox.style.display = 'flex';
+      // Trigger shake animation again
+      alertBox.style.animation = 'none';
+      alertBox.offsetHeight; // reflow
+      alertBox.style.animation = 'shake 0.4s ease';
+    }
+
+    function hideAlert() {
+      alertBox.style.display = 'none';
+    }
+
+    // Audio context resume on first interaction
+    document.addEventListener('click', () => {
+      sound.init();
+    }, { once: true });
+  </script>
+</body>
+</html>

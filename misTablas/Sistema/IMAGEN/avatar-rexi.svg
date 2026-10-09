@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="rexiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="dinoSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#84CC16"/>
+      <stop offset="100%" stop-color="#65A30D"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <circle cx="60" cy="60" r="56" fill="url(#rexiBg)" stroke="#34D399" stroke-width="4"/>
+  <!-- Jungle leaves in background -->
+  <path d="M 20 40 Q 30 30 25 20 Q 15 25 20 40 Z" fill="#047857" opacity="0.4"/>
+  <path d="M 98 45 Q 105 32 95 24 Q 90 32 98 45 Z" fill="#047857" opacity="0.4"/>
+  <!-- Spikes on back/head -->
+  <polygon points="42,22 47,32 37,32" fill="#F97316"/>
+  <polygon points="56,17 61,28 51,28" fill="#F97316"/>
+  <polygon points="70,22 75,32 65,32" fill="#F97316"/>
+  <!-- Dino Head and Body -->
+  <ellipse cx="60" cy="62" rx="34" ry="32" fill="url(#dinoSkin)"/>
+  <ellipse cx="60" cy="74" rx="28" ry="22" fill="#BEF264"/>
+  <!-- Snout -->
+  <ellipse cx="60" cy="64" rx="24" ry="16" fill="#A3E635"/>
+  <!-- Nostrils -->
+  <circle cx="53" cy="60" r="2.5" fill="#4D7C0F"/>
+  <circle cx="67" cy="60" r="2.5" fill="#4D7C0F"/>
+  <!-- Big Eyes -->
+  <circle cx="44" cy="45" r="9" fill="#FFFFFF" stroke="#4D7C0F" stroke-width="1.5"/>
+  <circle cx="76" cy="45" r="9" fill="#FFFFFF" stroke="#4D7C0F" stroke-width="1.5"/>
+  <!-- Pupils with sparkle -->
+  <circle cx="46" cy="45" r="5" fill="#1E293B"/>
+  <circle cx="48" cy="43" r="1.8" fill="#FFFFFF"/>
+  <circle cx="74" cy="45" r="5" fill="#1E293B"/>
+  <circle cx="76" cy="43" r="1.8" fill="#FFFFFF"/>
+  <!-- Cheeks -->
+  <ellipse cx="36" cy="60" rx="4" ry="3" fill="#F87171" opacity="0.8"/>
+  <ellipse cx="84" cy="60" rx="4" ry="3" fill="#F87171" opacity="0.8"/>
+  <!-- Big Friendly Smile with little cute teeth -->
+  <path d="M 46 68 Q 60 80 74 68" stroke="#1E293B" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <polygon points="52,69 56,74 54,69" fill="#FFFFFF"/>
+  <polygon points="64,69 68,74 66,69" fill="#FFFFFF"/>
+  <!-- Cute little hands -->
+  <ellipse cx="40" cy="85" rx="6" ry="8" fill="#84CC16" stroke="#4D7C0F" stroke-width="1.5"/>
+  <ellipse cx="80" cy="85" rx="6" ry="8" fill="#84CC16" stroke="#4D7C0F" stroke-width="1.5"/>
+</svg>

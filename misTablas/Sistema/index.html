@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Tablas • Sistema Educativo (4° Básico)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- Cabecera Gamer / Perfil del Estudiante -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand-section" onclick="appManager.navigateTo('menu')">
+        <img src="IMAGEN/logo.svg" alt="Mis Tablas Logo" class="brand-logo">
+      </div>
+
+      <div class="user-profile-bar">
+        <!-- Chip de Perfil -->
+        <div class="profile-chip" title="Tu perfil de explorador">
+          <img id="navUserAvatar" src="IMAGEN/avatar-cosmo.svg" alt="Avatar" class="user-avatar-small">
+          <div class="user-meta">
+            <span id="navUserName" class="user-name">Estudiante</span>
+            <span id="navUserLevel" class="user-level">Nivel 1 • Explorador</span>
+          </div>
+        </div>
+
+        <!-- Puntos y Estrellas -->
+        <div class="stat-chip" style="color: #FDE047;" title="Puntos de experiencia XP">
+          ✨ <span id="navUserPoints">0 XP</span>
+        </div>
+        <div class="stat-chip" style="color: #67E8F9;" title="Estrellas recolectadas">
+          <span id="navUserStars">0 ⭐</span>
+        </div>
+
+        <!-- Botones de Utilidad -->
+        <div class="header-buttons">
+          <button id="btnToggleSound" class="btn-header" title="Silenciar o activar sonidos">
+            🔊 Con Sonido
+          </button>
+          <button id="btnLogout" class="btn-header" title="Cambiar de estudiante">
+            👤 Salir
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de Pestañas de Navegación Principal -->
+  <nav class="app-nav-tabs">
+    <div class="nav-tabs-list">
+      <button class="nav-tab-item active" data-view="menu">
+        <span>🏠</span> <span>Menú Principal</span>
+      </button>
+      <button class="nav-tab-item" data-view="tablas">
+        <span>🗺️</span> <span>Mundo de Tablas</span>
+      </button>
+      <button class="nav-tab-item" data-view="juegos">
+        <span>🎮</span> <span>Juegos y Desafíos</span>
+      </button>
+      <button class="nav-tab-item" data-view="simce">
+        <span>📝</span> <span>Ensayo SIMCE</span>
+      </button>
+      <button class="nav-tab-item" data-view="progreso">
+        <span>📊</span> <span>Mi Progreso</span>
+      </button>
+      <button class="nav-tab-item" data-view="logros">
+        <span>🏆</span> <span>Logros y Medallas</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Área Principal de la Aplicación -->
+  <main id="appMainView" class="app-main">
+    <!-- El contenido se inyecta dinámicamente mediante JS -->
+  </main>
+
+  <!-- Scripts de la Plataforma -->
+  <script src="JS/sound.js"></script>
+  <script src="JS/confetti.js"></script>
+  <script src="JS/data.js"></script>
+  <script src="JS/tables.js"></script>
+  <script src="JS/games.js"></script>
+  <script src="JS/simce.js"></script>
+  <script src="JS/app.js"></script>
+</body>
+</html>

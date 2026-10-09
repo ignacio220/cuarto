@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="medalGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="70%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+  </defs>
+  <!-- Ribbons -->
+  <polygon points="26,4 32,24 20,24 14,4" fill="#EF4444"/>
+  <polygon points="38,4 32,24 44,24 50,4" fill="#3B82F6"/>
+  <!-- Medal Circle -->
+  <circle cx="32" cy="38" r="20" fill="url(#medalGold)" stroke="#92400E" stroke-width="2"/>
+  <circle cx="32" cy="38" r="16" fill="none" stroke="#FEF08A" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <!-- 1st place star -->
+  <polygon points="32,28 35,34 41,34 36,38 38,44 32,41 26,44 28,38 23,34 29,34" fill="#FFFFFF"/>
+</svg>

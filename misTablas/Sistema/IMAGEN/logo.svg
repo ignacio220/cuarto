@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5722"/>
+      <stop offset="50%" stop-color="#FF9800"/>
+      <stop offset="100%" stop-color="#FFC107"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Background Badge -->
+  <rect x="2" y="4" width="196" height="52" rx="26" fill="#1E1B4B" stroke="#6366F1" stroke-width="2.5"/>
+  <!-- Decorative Multiplier Star -->
+  <g transform="translate(28, 30)">
+    <circle cx="0" cy="0" r="18" fill="url(#logoGrad)"/>
+    <text x="0" y="7" font-family="'Arial Black', sans-serif" font-size="22" font-weight="900" fill="#FFFFFF" text-anchor="middle">×</text>
+  </g>
+  <!-- Main Title -->
+  <text x="56" y="28" font-family="'Fredoka', 'Comfortaa', 'Nunito', 'Segoe UI', sans-serif" font-size="19" font-weight="900" fill="#FACC15" filter="url(#glow)">MIS TABLAS</text>
+  <!-- Subtitle -->
+  <text x="57" y="46" font-family="'Nunito', sans-serif" font-size="10" font-weight="800" fill="#93C5FD" letter-spacing="1">¡APRENDE JUGANDO!</text>
+  <!-- Mini Sparkle -->
+  <circle cx="178" cy="20" r="2.5" fill="#FDE047"/>
+  <circle cx="186" cy="38" r="3" fill="#67E8F9"/>
+</svg>
